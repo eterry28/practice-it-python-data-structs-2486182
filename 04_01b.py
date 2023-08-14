@@ -1,7 +1,12 @@
-from collections import namedtuple
+from collections import namedtuple, defaultdict
+from pprint import pprint
+
+def default_value():
+    return "not available"
 
 def main():
     #add code here
+
     Food = namedtuple("Food", ["identifier", "name"])
 
     nadias_list = [
@@ -36,6 +41,9 @@ def main():
         Food("BEV003",	"Cafe Latte"),
     ]
 
+    d = defaultdict(default_value)
+    d.update(nadias_list)
+    pprint(d)
     return
 
 if __name__ == "__main__":
